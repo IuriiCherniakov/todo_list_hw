@@ -1,17 +1,22 @@
 import React, {useState} from 'react';
+import TodoListItem from "./TodoListItem";
 
 
 function TodoList(props) {
-
+const {updatedTodo, deleteButton,markTodo, moveUp} = props;
     return (
         <div>
-            {props.list.map(el =>
-                <li>
-                    {el.title}
-                    {el.done ? '✅' : ''}
-                    <button onClick={()=>props.changeStatus({id:el.id, done: !el.done})}>{el.done ? 'Undone' : 'Done'}</button>
-                    <button onClick={() => props.deleteButton(el.id)}>DELETE</button>
-                </li>)}
+            {props.list.map((el, index) => {
+                const isElemLast = index === props.list.length - 1
+               return <TodoListItem
+                    el={el}
+                    updatedTodo={updatedTodo}
+                    deleteButton={deleteButton}
+                    markTodo={markTodo}
+                    index={index}
+                    moveUp={moveUp}
+                    isElemLast={isElemLast}
+                />})}
 
         </div>
     );

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 
-function TodoForm(props) {
+function TodoController(props) {
     const [inputValue, setInputValue] = useState('')
     const addButton = () => {
         props.addNewTodo(inputValue);
@@ -16,4 +16,4 @@ function TodoForm(props) {
     );
 }
 
-export default TodoForm;
+export default TodoController;
