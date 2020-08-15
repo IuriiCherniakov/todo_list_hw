@@ -97,13 +97,32 @@ function App() {
         // })
         // setList(newList)
     }
-    const markTodo = (id) => {
-        const newList = list.map(el => {
-            if (el._id === id)
-                return ({...el, done: !el.done})
-            return el
-        })
-        setList(newList)
+
+    const markTodo = async (id, done) => {
+        // const newList = list.map(el => {
+        //     if (el._id === id)
+        //         return ({...el, done: !el.done})
+        //     return el
+        // })
+        // setList(newList)
+        await axios.put(`http://localhost:5000/todo/${id}`,{done:!done})
+            .then(function (response) {
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+
+        await axios.get('http://localhost:5000/todo/')
+            .then(function (response) {
+                const listFromServer = response.data
+                console.log(listFromServer);
+                setList(listFromServer)
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+
+
 
     }
     const moveUp = (currentElementIndex, previousElementIndex) => {

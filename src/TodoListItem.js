@@ -23,7 +23,7 @@ function TodoListItem(props) {
         <div>
 
             <li style={style}>
-                <input type='checkbox' checked={el.done} onClick={() => markTodo(el._id)}/>
+                <input type='checkbox' checked={el.done} onClick={() => markTodo(el._id, el.done)}/>
 
                 {editMode ? (
                     <>
