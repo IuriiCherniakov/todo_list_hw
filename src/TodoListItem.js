@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import axios from "axios";
 
 
 function TodoListItem(props) {
@@ -40,8 +41,8 @@ function TodoListItem(props) {
                         {/*    done: !el.done*/}
                         {/*})}>{el.done ? 'Undone' : 'Done'}</button>*/}
                         <button onClick={() => props.deleteButton(el._id)}>DELETE</button>
-                        <button onClick={() => moveUp(index, index - 1)} disabled={!index}>↑</button>
-                        <button onClick={() => moveUp(index, index + 1)} disabled={isElemLast}>↓</button>
+                        <button onClick={() => moveUp(index, index -1)} disabled={!index}>↑</button>
+                        <button onClick={() => moveUp(index, index +1)} disabled={isElemLast} >↓</button>
                     </>
                 )
 

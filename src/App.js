@@ -63,13 +63,6 @@ function App() {
             .catch(function (error) {
                 console.log(error);
             })
-
-
-
-
-
-
-
     }
 
     const changeStatus = ({id, done}) => {
@@ -79,13 +72,30 @@ function App() {
         })
         setList(newStatus)
     }
-    const updatedTodo = (newTitle, id) => {
+    const updatedTodo =  async (newTitle, id) => {
 
-        const newList = [...list].map((el) => {
-            if (el._id === id) return ({...el, title: newTitle})
-            return el
-        })
-        setList(newList)
+        await axios.patch(`http://localhost:5000/todo/${id}`, {name:newTitle})
+            .then(function (response) {
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+
+        await axios.get('http://localhost:5000/todo/')
+            .then(function (response) {
+                const listFromServer = response.data
+                console.log(listFromServer);
+                setList(listFromServer)
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+
+        // const newList = [...list].map((el) => {
+        //     if (el._id === id) return ({...el, title: newTitle})
+        //     return el
+        // })
+        // setList(newList)
     }
     const markTodo = (id) => {
         const newList = list.map(el => {
