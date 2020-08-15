@@ -7,7 +7,7 @@ function TodoListItem(props) {
     const [editMode, setEditMode] = useState(false)
     const style = el.done === true ? {'textDecoration': 'line-through'} : null
     const editButtonHandler = () => {
-        updatedTodo(editTitle, el.id)
+        updatedTodo(editTitle, el._id)
         setEditMode(false)
         setEditTitle('')
 
@@ -22,7 +22,7 @@ function TodoListItem(props) {
         <div>
 
             <li style={style}>
-                <input type='checkbox' checked={el.done} onClick={() => markTodo(el.id)}/>
+                <input type='checkbox' checked={el.done} onClick={() => markTodo(el._id)}/>
 
                 {editMode ? (
                     <>
@@ -33,15 +33,15 @@ function TodoListItem(props) {
                     </>
                 ) : (
                     <>
-                        {el.title}
+                        {el.name}
                         {/*{el.done ? '✅' : ''}*/}
                         {/*<button onClick={() => props.changeStatus({*/}
                         {/*    id: el.id,*/}
                         {/*    done: !el.done*/}
                         {/*})}>{el.done ? 'Undone' : 'Done'}</button>*/}
-                        <button onClick={() => props.deleteButton(el.id)}>DELETE</button>
-                        <button onClick={() => moveUp(index, index -1)} disabled={!index}>↑</button>
-                        <button onClick={() => moveUp(index, index +1)} disabled={isElemLast} >↓</button>
+                        <button onClick={() => props.deleteButton(el._id)}>DELETE</button>
+                        <button onClick={() => moveUp(index, index - 1)} disabled={!index}>↑</button>
+                        <button onClick={() => moveUp(index, index + 1)} disabled={isElemLast}>↓</button>
                     </>
                 )
 

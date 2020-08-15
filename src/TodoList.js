@@ -16,6 +16,7 @@ const {updatedTodo, deleteButton,markTodo, moveUp} = props;
                     index={index}
                     moveUp={moveUp}
                     isElemLast={isElemLast}
+                    key={el._id}
                 />})}
 
         </div>
