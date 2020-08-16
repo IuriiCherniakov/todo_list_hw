@@ -24,7 +24,7 @@ function App() {
                 console.log(error);
             })
 
-// //ОТПРАВЛЯЕМ ЗАПРОС НА СЕРВЕР, ИСПОЛЬЗУЯ ID ЭЛЕМЕНТА
+// ОТПРАВЛЯЕМ ЗАПРОС НА СЕРВЕР, ИСПОЛЬЗУЯ ID ЭЛЕМЕНТА
 //         await axios.get('http://localhost:5000/todo/${taskId}')
 //             .then(function (response) {
 //                 const listFromServer = response.data
