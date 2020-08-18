@@ -98,13 +98,13 @@ function App() {
         // setList(newList)
     }
 
-    const markTodo = async (id, done) => {
         // const newList = list.map(el => {
         //     if (el._id === id)
         //         return ({...el, done: !el.done})
         //     return el
         // })
         // setList(newList)
+    const markTodo = async (id, done) => {
         await axios.put(`http://localhost:5000/todo/${id}`,{done:!done})
             .then(function (response) {
             })

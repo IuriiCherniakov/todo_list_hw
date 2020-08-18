@@ -37,8 +37,8 @@ function TodoListItem(props) {
                         {el.name}
                         {/*{el.done ? '✅' : ''}*/}
                         {/*<button onClick={() => props.changeStatus({*/}
-                        {/*    id: el.id,*/}
-                        {/*    done: !el.done*/}
+                        {/* id: el.id,*/}
+                        {/* done: !el.done*/}
                         {/*})}>{el.done ? 'Undone' : 'Done'}</button>*/}
                         <button onClick={() => props.deleteButton(el._id)}>DELETE</button>
                         <button onClick={() => moveUp(index, index -1)} disabled={!index}>↑</button>
