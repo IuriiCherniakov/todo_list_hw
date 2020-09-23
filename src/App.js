@@ -9,7 +9,6 @@ function App() {
     // const initialState = [
     //     {id: 1, title: 'First todo', done: false},
     //     {id: 2, title: 'Second todo', done: false},
-    //     {id: 3, title: 'Third todo', done: false}]
 
     const [list, setList] = useState([]);
 

@@ -8,7 +8,7 @@ const {updatedTodo, deleteButton,markTodo, moveUp} = props;
         <div>
             {props.list.map((el, index) => {
                 const isElemLast = index === props.list.length - 1
-               return <TodoListItem
+                             return <TodoListItem
                     el={el}
                     updatedTodo={updatedTodo}
                     deleteButton={deleteButton}
